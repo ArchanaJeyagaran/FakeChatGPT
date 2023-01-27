@@ -1,7 +1,8 @@
 from transformers import pipeline, set_seed
 
+classifier = pipeline('ner', model = 'stevhliu/my_awesome_wnut_model')
+
 def entity_categorizer(question: str):
-    classifier = pipeline('ner', model = 'stevhliu/my_awesome_wnut_model')
     result = classifier(question)
     output = []
     for i in range(len(result)):
